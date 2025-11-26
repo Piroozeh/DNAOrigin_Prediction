@@ -16,9 +16,8 @@ All datasets share the same positive instances (origin sequences) but differ in 
 
 ## DNABERT_explainability
 
-Contains the complete explainability pipeline used to interpret DNABERT predictions through attention-based motif discovery.
+Contains the main scripts for attention score visualization and atttention-base fragment selection modules as parts of our proposed motif discovery pipeline to interpret DNABERT predictions.
 
 ## DNABERT-2_explainability
 
-Includes explainability pipelines for DNABERT-2, including: Perturbation-based explanation and Explainaing with Shapley Values. We adopted TranSHAP (https://github.com/enjakokalj/TransSHAP) for DNA sequence classification by
-DNABERT-2, developing a modified module that enables SHAP-based explanations of DNA sequences tokenized with BPE.
+Includes a module to extract attention scores and represent then in 3 mode and corresponding visualization for interpert model performance. Also explainability pipelines for DNABERT-2, including: Perturbation-based explanations and explainaing with Shapley Values. In DNA_TransSHAP pipeline we adopted TranSHAP (https://github.com/enjakokalj/TransSHAP) for DNA sequence classification by DNABERT-2, developing a modified module that enables SHAP-based explanations of DNA sequences tokenized with BPE.
