@@ -13,6 +13,8 @@ We selected 325 confirmed ORIs, none exceeding 500 bp, as positive instances to 
 
 To explore research questions related to origin base composition, non-origin sequences were subsampled in various ways (as described in the paper), resulting in four datasets.
 All datasets share the same positive instances (origin sequences) but differ in their sets of negative instances (non-origin sequences).
+To examine whether the proposed DNABERT explainability pipeline generalizes beyond S. cerevisiae, we applied it to a human replication origin dataset. Two datasets designed for this task and are also availabe in dataset directory. They were generated from the dataset originally proposed by iORI-Epi for the origins of DNA replication in the human genome which is publicly available on the corresponding repository https://github.com/linDing-group/iORI-Epi .
+
 
 ## DNABERT_explainability
 
