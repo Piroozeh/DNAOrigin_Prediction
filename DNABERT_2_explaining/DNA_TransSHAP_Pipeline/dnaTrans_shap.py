@@ -15,7 +15,7 @@ logging.getLogger().setLevel(logging.INFO)
 logging.getLogger("shap").setLevel(logging.WARNING)
 shap.initjs()
 # Step 1  Load model / test sequences
-model_path = "/p/project/hai_dnaori/piroozeh1/yeast-origins/data/OriDB_random_neg/train_dev_test_oridb/DNABERT2/model2"
+model_path = "/p/project1/hai_dnaori/piroozeh1/yeast-origins/data/OriDB_random_neg/train_dev_test_oridb/DNABERT2/model2"
 
 config = transformers.BertConfig.from_pretrained(
                 model_path,
@@ -35,9 +35,9 @@ tokenizer = transformers.AutoTokenizer.from_pretrained(
 
 #  Create a list of sequences to explain
 texts=[]
-data_dir="/p/project1/hai_dnaori/piroozeh1/yeast-origins/data/OriDB_random_neg/train_dev_test_oridb"
-data = pd.read_csv(os.path.join(data_dir,"test_window.tsv"),sep='\t',header=0)
-test=data
+data_dir_test="/p/project1/hai_dnaori/piroozeh1/yeast-origins/data/OriDB_random_neg/train_dev_test_oridb"
+test = pd.read_csv(os.path.join(data_dir_test,"test_window.tsv"), sep='\t', header=0)
+print(test.head())
 texts.extend(test['seq'].tolist())
 print("number of sequences: ", len(texts))
 
@@ -56,16 +56,14 @@ predictor = SHAPexplainerDNA(
 )
 
 # Step 3: Preprocess training data to token index arrays
-data_dir="/p/project1/hai_dnaori/piroozeh1/yeast-origins/data/OriDB_random_neg/train_dev_test_oridb"
-data = pd.read_csv(os.path.join(data_dir,"train_window.tsv"),sep='\t',header=0)
-# print(data.head(10))
+data_dir_train="/p/project1/hai_dnaori/piroozeh1/yeast-origins/data/OriDB_random_neg/train_dev_test_oridb"
+data = pd.read_csv(os.path.join(data_dir_train,"train_window.tsv"),sep='\t',header=0)
+
 train_dt = [tokenizer.tokenize(seq) for seq in data['seq'].tolist()]  # Each seq becomes list of tokens
 idx_train_data, max_seq_len = predictor.dt_to_idx(train_dt)
 print("max seq len train: " , max_seq_len )
 
-data2 = pd.read_csv(os.path.join(data_dir,"test_window.tsv"),sep='\t',header=0)
-# print(data.head(10))
-test_dt = [tokenizer.tokenize(seq) for seq in data2['seq'].tolist()]  # Each seq becomes list of tokens
+test_dt = [tokenizer.tokenize(seq) for seq in test['seq'].tolist()]  # Each seq becomes list of tokens
 idx_test_data, max_seq_len_test = predictor.dt_to_idx(test_dt)
 print("max seq len test: " , max_seq_len_test )
 
@@ -90,8 +88,7 @@ shap_values = explainer.shap_values(X=idx_texts, nsamples=nsamples, l1_reg=l1_re
 print("shap values: ", shap_values)
 # Step 6: Save SHAP values 
 
-# Assume class 1 is the target 
-target_class = 1
+
 num_samples = len(texts_)
 num_classes=2
 
