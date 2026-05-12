@@ -1,0 +1,35 @@
+Split 0:
+train = ['chrX', 'chr7', 'chr10', 'chr2', 'chr20', 'chr12', 'chr11', 'chr22', 'chr5', 'chr19', 'chr8', 'chr9', 'chr1', 'chr4', 'chr21']
+eval  = ['chr6', 'chr14', 'chr18', 'chr13']
+test  = ['chr17', 'chr16', 'chr3', 'chr15']
+ 
+Split 1:
+train = ['chr17', 'chr16', 'chr3', 'chr15', 'chr2', 'chr20', 'chr12', 'chr11', 'chr22', 'chr5', 'chr19', 'chr8', 'chr9', 'chr1', 'chr4', 'chr21']
+eval  = ['chrX', 'chr7', 'chr10']
+test  = ['chr6', 'chr14', 'chr18', 'chr13']
+ 
+Split 2:
+train = ['chr17', 'chr16', 'chr3', 'chr15', 'chr6', 'chr14', 'chr18', 'chr13', 'chr11', 'chr22', 'chr5', 'chr19', 'chr8', 'chr9', 'chr1', 'chr4', 'chr21']
+eval  = ['chr2', 'chr20', 'chr12']
+test  = ['chrX', 'chr7', 'chr10']
+ 
+Split 3:
+train = ['chr17', 'chr16', 'chr3', 'chr15', 'chr6', 'chr14', 'chr18', 'chr13', 'chrX', 'chr7', 'chr10', 'chr19', 'chr8', 'chr9', 'chr1', 'chr4', 'chr21']
+eval  = ['chr11', 'chr22', 'chr5']
+test  = ['chr2', 'chr20', 'chr12']
+ 
+Split 4:
+train = ['chr17', 'chr16', 'chr3', 'chr15', 'chr6', 'chr14', 'chr18', 'chr13', 'chrX', 'chr7', 'chr10', 'chr2', 'chr20', 'chr12', 'chr1', 'chr4', 'chr21']
+eval  = ['chr19', 'chr8', 'chr9']
+test  = ['chr11', 'chr22', 'chr5']
+ 
+Split 5:
+train = ['chr17', 'chr16', 'chr3', 'chr15', 'chr6', 'chr14', 'chr18', 'chr13', 'chrX', 'chr7', 'chr10', 'chr2', 'chr20', 'chr12', 'chr11', 'chr22', 'chr5']
+eval  = ['chr1', 'chr4', 'chr21']
+test  = ['chr19', 'chr8', 'chr9']
+ 
+Split 6:
+train = ['chr6', 'chr14', 'chr18', 'chr13', 'chrX', 'chr7', 'chr10', 'chr2', 'chr20', 'chr12', 'chr11', 'chr22', 'chr5', 'chr19', 'chr8', 'chr9']
+eval  = ['chr17', 'chr16', 'chr3', 'chr15']
+test  = ['chr1', 'chr4', 'chr21']
+ 
