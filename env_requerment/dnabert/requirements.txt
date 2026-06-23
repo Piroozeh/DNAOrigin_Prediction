@@ -1,0 +1,24 @@
+# Add here the pip packages you would like to install on this virtual environment / kernel
+pip
+ipykernel
+numpy
+keras_pos_embd
+pyBigWig
+pyfaidx
+liftover
+matplotlib
+tensorboardX
+tensorboard
+scikit-learn >= 0.22.2
+seqeval
+pyahocorasick
+scipy
+statsmodels
+biopython
+pandas
+pybedtools
+sentencepiece
+tqdm
+seaborn
+pybedtools
+

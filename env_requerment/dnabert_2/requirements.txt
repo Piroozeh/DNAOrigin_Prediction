@@ -1,0 +1,8 @@
+# Add here the pip packages you would like to install on this virtual environment / kernel
+pip
+einops
+transformers==4.29.2
+peft
+omegaconf
+evaluate
+accelerat
