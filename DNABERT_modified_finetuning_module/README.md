@@ -25,7 +25,7 @@ Key changes include:
 * Avoiding storage of full attention tensors for all samples.
 * Computing visualization scores directly during batch processing.
 * Vectorizing k-mer score aggregation operations.
-* Storing only the final normalized per-position scores instead of complete attention maps.
+* Storing only the final per-position scores for [CLS] instead of extracting full attention maps.
 
 These modifications substantially reduce memory consumption and improve processing speed when extracting attention-based visualizations from large datasets, such as k562_Len512 and k562_LenMatch.
 
