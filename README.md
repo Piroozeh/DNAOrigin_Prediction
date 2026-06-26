@@ -17,6 +17,13 @@ To examine whether the DNABERt can discriminate origin sequences beyond S. cerev
 
 In addition, this folder includes all required scripts for constructing the datasets from the original data sources, as well as preprocessing, train/validation/test splitting, and other data preparation steps.
 
+### Statistical comparison for ACS-Neg
+The corresponding scripts are located in the folder `datasets/scripts`. The workflow is as follows:
+1. `convert_to_fasta.py` merges train.tsv, dev.tsv, test.tsv and writes all_pos.fa / all_neg.fa.
+2. Run Homer script on the negative instances against the motif file template, in order to get motif scores `findMotifs.pl all_neg.fa fasta acs_neg_out/ -find acs_motif_matrix.motif > acs_neg.scan.txt`
+3. find_best_score.py extracts the best MotifScore per sequence into acs_pos.best.csv / acs_neg.best.csv.
+4. distribution_comparison_homer.py after randomly subsampling negatives from acs_neg.best.csv, run it to check whether positive and negative MotifScore distributions are significantly different.
+
 ## DNABERT_explainability
 
 Contains the main scripts for attention score visualization and atttention-base fragment selection modules as parts of our proposed motif discovery pipeline to interpret DNABERT predictions.
@@ -28,6 +35,12 @@ This folder contains a modified version of the original `finetune.py` script fro
 ## DNABERT-2_explainability
 
 Includes a module to extract attention scores and represent then in 3 mode and corresponding visualization for interpert model performance. Also explainability pipelines for DNABERT-2, including: Perturbation-based explanations and explainaing with Shapley Values. In DNA_TransSHAP pipeline we adopted TranSHAP (https://github.com/enjakokalj/TransSHAP) for DNA sequence classification by DNABERT-2, developing a modified module that enables SHAP-based explanations of DNA sequences tokenized with BPE.
+
+### AT-index
+
+The AT-index workflow quantifies origin-like AT-rich sequence composition independently of model attribution scores. It is implemented in `DNABERT_2_explainability/AT_index` with two main scripts:
+1. `check_SHAP_1.py` computes per-sequence AT-richness features and the standardized AT-index.
+2. `plot_SHAP.py performs group-wise statistical comparisons using the AT-index values.
 
 
 ## DNABERT_2_modified_finetuning_module
