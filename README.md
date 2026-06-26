@@ -17,12 +17,6 @@ To examine whether the DNABERt can discriminate origin sequences beyond S. cerev
 
 In addition, this folder includes all required scripts for constructing the datasets from the original data sources, as well as preprocessing, train/validation/test splitting, and other data preparation steps.
 
-### Statistical comparison for ACS-Neg
-The corresponding scripts are located in the folder `datasets/scripts`. The workflow is as follows:
-1. `convert_to_fasta.py` merges train.tsv, dev.tsv, test.tsv and writes all_pos.fa / all_neg.fa.
-2. Run Homer script on the negative instances against the motif file template, in order to get motif scores `findMotifs.pl all_neg.fa fasta acs_neg_out/ -find acs_motif_matrix.motif > acs_neg.scan.txt`
-3. find_best_score.py extracts the best MotifScore per sequence into acs_pos.best.csv / acs_neg.best.csv.
-4. distribution_comparison_homer.py after randomly subsampling negatives from acs_neg.best.csv, run it to check whether positive and negative MotifScore distributions are significantly different.
 
 ## DNABERT_explainability
 
