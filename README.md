@@ -40,7 +40,7 @@ Includes a module to extract attention scores and represent then in 3 mode and c
 
 The AT-index workflow quantifies origin-like AT-rich sequence composition independently of model attribution scores. It is implemented in `DNABERT_2_explainability/AT_index` with two main scripts:
 1. `check_SHAP_1.py` computes per-sequence AT-richness features and the standardized AT-index.
-2. `plot_SHAP.py performs group-wise statistical comparisons using the AT-index values.
+2. `plot_SHAP.py` performs group-wise statistical comparisons using the AT-index values.
 
 
 ## DNABERT_2_modified_finetuning_module
