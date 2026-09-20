@@ -1,6 +1,8 @@
 
 # Project Overview
 
+This repository provides the source code and datasets accompanying our paper: [Interpretable prediction of DNA replication origins in S.cerevisiae using DNABERT and DNABERT-2.](https://doi.org/10.1186/s12859-026-06562-5)
+
 We used pre-trained [DNABERT](https://github.com/jerryji1993/DNABERT/tree/master) and [DNABERT-2](https://github.com/MAGICS-LAB/DNABERT_2/tree/main) and fine-tuned models to discriminate replicating origin sequences from non-origin sequences directly from the final embedding of each sequence. Our methodology included extensive data engineering as well as a suite of explainability techniques for model interpretation.
 
 This repository contains the explainability pipelines for each model, as well as fine-tuning pipelines, the SHAP analysis scripts, and the data pre-processing workflows.
